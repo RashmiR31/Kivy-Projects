@@ -1,0 +1,136 @@
+#: import utils kivy.utils 
+
+<Button>
+    size_hint: (.15,.15)
+    font_size: 32
+    background_normal: ''
+
+<mylayout>
+    BoxLayout:  
+        orientation: "vertical"
+        size: root.width,root.height
+
+        TextInput:
+            id: calc_input
+            text: "0"
+            halign: "right" 
+            font_size: 65
+            size_hint: (1,0.2)
+
+        GridLayout:
+            cols: 4
+            rows: 5
+
+            #
+            Button:
+                text: "%" 
+                background_color: utils.get_color_from_hex('#3299a8') 
+                on_press: root.math_sign("%")
+            Button:
+                id: clear
+                text: "C" 
+                background_color: utils.get_color_from_hex('#3299a8') 
+                on_press: root.clear()
+            
+            Button:
+                text: u"\u00AB" 
+                background_color: utils.get_color_from_hex('#3299a8') 
+                on_press: root.remove()
+
+            Button:
+                text: "/" 
+                background_color: utils.get_color_from_hex('#3299a8') 
+                on_press: root.math_sign("/")
+            
+            #####
+            Button:
+                text: "7" 
+                background_color: utils.get_color_from_hex('#6dcbe8')
+                on_press: root.button_press(7)
+
+            Button:
+                text: "8" 
+                background_color: utils.get_color_from_hex('#6dcbe8')
+                on_press: root.button_press(8)
+
+            Button:
+                text: "9"
+                background_color: utils.get_color_from_hex('#6dcbe8')
+                on_press: root.button_press(9)
+
+
+            Button:
+                text: "x"
+                background_color: utils.get_color_from_hex('#3299a8') 
+                on_press: root.math_sign("*")
+
+            #
+            Button:
+                text: "4" 
+                background_color: utils.get_color_from_hex('#6dcbe8')
+                on_press: root.button_press(4)
+
+            
+            Button:
+                text: "5" 
+                background_color: utils.get_color_from_hex('#6dcbe8')
+                on_press: root.button_press(5)
+
+
+            Button:
+                text: "6" 
+                background_color: utils.get_color_from_hex('#6dcbe8')
+                on_press: root.button_press(6)
+
+
+            Button:
+                text: "-"
+                background_color: utils.get_color_from_hex('#3299a8') 
+                on_press: root.math_sign("-")
+            
+            #
+            Button:
+                text: "1" 
+                background_color: utils.get_color_from_hex('#6dcbe8')
+                on_press: root.button_press(1)
+
+            
+            Button:
+                text: "2" 
+                background_color: utils.get_color_from_hex('#6dcbe8')
+                on_press: root.button_press(2)
+
+
+            Button:
+                text: "3"
+                background_color: utils.get_color_from_hex('#6dcbe8')
+                on_press: root.button_press(3)
+
+
+            Button:
+                text: "+"
+                background_color: utils.get_color_from_hex('#3299a8') 
+                on_press: root.math_sign("+")
+            
+            #
+            Button:
+                text: "+/-" 
+                background_color: utils.get_color_from_hex('#6dcbe8')
+                on_press: root.pos_neg()
+            
+            Button:
+                text: "0" 
+                background_color: utils.get_color_from_hex('#6dcbe8')
+                on_press: root.button_press(0)
+
+            Button:
+                text: "."
+                background_color: utils.get_color_from_hex('#6dcbe8')
+                on_press: root.dot()
+
+            Button:
+                text: "="
+                background_color: utils.get_color_from_hex('#3299a8') 
+                on_press: root.equals()
+
+        
